@@ -5,3 +5,5 @@ declare const process: {
     readonly REACT_APP_BACK_END_URL: string;
   };
 };
+
+declare module '*.css';

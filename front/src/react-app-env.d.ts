@@ -7,3 +7,5 @@ declare const process: {
 };
 
 declare module '*.css';
+
+declare module 'fullpage.js';

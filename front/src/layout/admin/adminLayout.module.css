@@ -27,8 +27,25 @@
 }
 
 .userMenu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
     color: var(--admin-text-secondary);
     font-size: 14px;
+}
+
+.homeLink {
+    color: var(--admin-text-secondary);
+    transition: color 0.2s;
+}
+
+.homeLink:hover {
+    color: var(--admin-text);
+}
+
+.divider {
+    color: var(--border);
 }
 
 .body {

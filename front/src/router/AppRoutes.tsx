@@ -6,6 +6,8 @@ import AdminHome from "../cont/admin/AdminHome";
 
 import Layout from "../layout/Layout";
 import AdminLayout from "../layout/admin/AdminLayout";
+import MemberManagement from "../cont/admin/member/MemberManagement";
+import BoardManagement from "../cont/admin/board/BoardManagement";
 
 interface RouteItem {
     path: string;
@@ -20,8 +22,17 @@ const AppRoutes: React.FC = () => {
     const isManage = pathname.startsWith("/admin");
 
     const routeList: RouteItem[] = [
+
+        // common
         { path: "/", element: <Home /> },
+
+
+        // admin
         { path: "/admin", element: <AdminHome /> },
+        { path: "/admin/memberManagement", element: <MemberManagement /> },
+        { path: "/admin/boardManagement", element: <BoardManagement /> },
+
+        // user? auth? account?
     ];
 
     return (

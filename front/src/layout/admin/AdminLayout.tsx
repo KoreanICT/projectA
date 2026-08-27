@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './adminLayout.module.css';
 import AdminSidebar from './AdminSidebar';
+import { Link } from 'react-router-dom';
 
 interface AdminLayoutProps {
     children: React.ReactNode;
@@ -17,7 +18,13 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
                     </div>
 
                     <div className={styles.userMenu}>
-                        관리자
+                        <Link to="/" className={styles.homeLink}>
+                            홈페이지
+                        </Link>
+
+                        <span className={styles.divider}>|</span>
+
+                        <span>관리자</span>
                     </div>
                 </div>
             </header>

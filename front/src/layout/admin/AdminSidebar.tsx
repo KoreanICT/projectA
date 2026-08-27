@@ -21,7 +21,7 @@ const AdminSidebar: React.FC = () => {
                 </NavLink>
 
                 <NavLink
-                    to="/admin/users"
+                    to="/admin/memberManagement"
                     className={({ isActive }) =>
                         `${styles.menuItem} ${isActive ? styles.active : ''}`
                     }
@@ -30,7 +30,7 @@ const AdminSidebar: React.FC = () => {
                 </NavLink>
 
                 <NavLink
-                    to="/admin/posts"
+                    to="/admin/boardManagement"
                     className={({ isActive }) =>
                         `${styles.menuItem} ${isActive ? styles.active : ''}`
                     }

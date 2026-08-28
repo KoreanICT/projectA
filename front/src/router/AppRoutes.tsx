@@ -8,6 +8,9 @@ import Layout from "../layout/Layout";
 import AdminLayout from "../layout/admin/AdminLayout";
 import MemberManagement from "../cont/admin/member/MemberManagement";
 import BoardManagement from "../cont/admin/board/BoardManagement";
+import StudentCode from "../cont/friend/StudentCode";
+import FriendAdd from "../cont/friend/FriendAdd";
+import FriendList from "../cont/friend/FriendList";
 
 interface RouteItem {
     path: string;
@@ -25,6 +28,9 @@ const AppRoutes: React.FC = () => {
 
         // common
         { path: "/", element: <Home /> },
+        { path: "/friend/code", element: <StudentCode /> },
+        { path: "/friend/add", element: <FriendAdd /> },
+        { path: "/friend/list", element: <FriendList /> },
 
 
         // admin

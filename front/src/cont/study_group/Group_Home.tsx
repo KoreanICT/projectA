@@ -5,20 +5,16 @@ import './group.model.css';
 export const Group_Home: React.FC = () => {
     const [currentTab, setCurrentTab] = useState<'public' | 'my'>('public');
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    
+    // 검색 조건 상태
+    const [searchType, setSearchType] = useState<'name' | 'tag'>('name');
+    const [searchTerm, setSearchTerm] = useState<string>('');
 
     return (
         <div className="container">
             <div className="study-page-layout">
                 {/* 1. 메인 콘텐츠 영역 (좌측) */}
                 <main className="study-main-content">
-                    <div className="study-search-wrapper">
-                        <input
-                            type="text"
-                            placeholder="검색어 입력"
-                            className="study-search-input"
-                        />
-                    </div>
-
                     <div className="study-list-wrapper">
                         <div className="study-card">
                             조회된 {currentTab === 'public' ? '공개' : '내'} 스터디 그룹 카드 1
@@ -37,6 +33,10 @@ export const Group_Home: React.FC = () => {
                     currentTab={currentTab}
                     onTabChange={(tab) => setCurrentTab(tab)}
                     onOpenCreateModal={() => setIsModalOpen(true)}
+                    searchType={searchType}
+                    onSearchTypeChange={(type) => setSearchType(type)}
+                    searchTerm={searchTerm}
+                    onSearchChange={(value) => setSearchTerm(value)}
                 />
 
                 {/* 3. 스터디룸 생성 모달 */}

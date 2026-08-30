@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './group.module.css';
 
 interface GroupSidebarProps {
     currentTab: 'public' | 'my';
@@ -20,29 +21,29 @@ export const Group_Sidebar: React.FC<GroupSidebarProps> = ({
     onSearchChange,
 }) => {
     return (
-        <aside className="study-sidebar-container">
+        <aside className={styles.study_sidebar_container}>
             {/* 1. 메뉴 둥근 사각형 박스 (3가지 메뉴만 포함) */}
-            <nav className="study-menu-box">
+            <nav className={styles.study_menu_box}>
                 <button
-                    className={`study-menu-button ${currentTab === 'my' ? 'active' : ''}`}
+                    className={`${styles.study_menu_button} ${currentTab === 'my' ? `${styles.active}` : ''}`}
                     onClick={() => onTabChange('my')}
                 >
                     내 스터디룸
                 </button>
 
-                <div className="study-menu-divider" />
+                <div className={styles.study_menu_divider} />
 
                 <button
-                    className={`study-menu-button ${currentTab === 'public' ? 'active' : ''}`}
+                    className={`${styles.study_menu_button} ${currentTab === 'public' ? `${styles.active}` : ''}`}
                     onClick={() => onTabChange('public')}
                 >
                     공개된 스터디룸
                 </button>
 
-                <div className="study-menu-divider" />
+                <div className={styles.study_menu_divider} />
 
                 <button
-                    className="study-menu-button"
+                    className={styles.study_menu_button}
                     onClick={onOpenCreateModal}
                 >
                     스터디룸 생성
@@ -50,9 +51,9 @@ export const Group_Sidebar: React.FC<GroupSidebarProps> = ({
             </nav>
 
             {/* 2. 메뉴 박스 '밖 아래'에 배치된 드롭다운 통합 검색 박스 */}
-            <div className="sidebar-search-box">
+            <div className={styles.sidebar_search_box}>
                 <select
-                    className="sidebar-search-select"
+                    className={styles.sidebar_search_select}
                     value={searchType}
                     onChange={(e) => onSearchTypeChange(e.target.value as 'name' | 'tag')}
                 >
@@ -63,7 +64,7 @@ export const Group_Sidebar: React.FC<GroupSidebarProps> = ({
                 <input
                     type="text"
                     placeholder="검색어 입력"
-                    className="sidebar-search-input"
+                    className={styles.sidebar_search_input}
                     value={searchTerm}
                     onChange={(e) => onSearchChange(e.target.value)}
                 />

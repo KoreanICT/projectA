@@ -1,34 +1,28 @@
 import React, { useState } from 'react';
 import { Group_Sidebar } from './Group_Sidebar';
-import './group.model.css';
+import { Group_Private } from './Group_Private';
+import { Group_Public } from './Group_Public';
+import styles from './group.module.css';
 
 export const Group_Home: React.FC = () => {
     const [currentTab, setCurrentTab] = useState<'public' | 'my'>('public');
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     
-    // 검색 조건 상태
+    // 사이드바 공통 검색 상태
     const [searchType, setSearchType] = useState<'name' | 'tag'>('name');
     const [searchTerm, setSearchTerm] = useState<string>('');
 
     return (
         <div className="container">
-            <div className="study-page-layout">
-                {/* 1. 메인 콘텐츠 영역 (좌측) */}
-                <main className="study-main-content">
-                    <div className="study-list-wrapper">
-                        <div className="study-card">
-                            조회된 {currentTab === 'public' ? '공개' : '내'} 스터디 그룹 카드 1
-                        </div>
-                        <div className="study-card">
-                            조회된 {currentTab === 'public' ? '공개' : '내'} 스터디 그룹 카드 2
-                        </div>
-                        <div className="study-card">
-                            조회된 {currentTab === 'public' ? '공개' : '내'} 스터디 그룹 카드 3
-                        </div>
-                    </div>
-                </main>
+            <div className={styles.study_page_layout}>
+                {/* 1. 좌측 렌더링 영역 (탭 선택에 따라 자식 컴포넌트 교체) */}
+                {currentTab === 'my' ? (
+                    <Group_Private searchType={searchType} searchTerm={searchTerm} />
+                ) : (
+                    <Group_Public searchType={searchType} searchTerm={searchTerm} />
+                )}
 
-                {/* 2. 우측 사이드바 영역 */}
+                {/* 2. 우측 고정 사이드바 */}
                 <Group_Sidebar
                     currentTab={currentTab}
                     onTabChange={(tab) => setCurrentTab(tab)}
@@ -41,12 +35,12 @@ export const Group_Home: React.FC = () => {
 
                 {/* 3. 스터디룸 생성 모달 */}
                 {isModalOpen && (
-                    <div className="study-modal-overlay" onClick={() => setIsModalOpen(false)}>
-                        <div className="study-modal-box" onClick={(e) => e.stopPropagation()}>
+                    <div className={styles.study_modal_overlay} onClick={() => setIsModalOpen(false)}>
+                        <div className={styles.study_modal_box} onClick={(e) => e.stopPropagation()}>
                             <h2>스터디룸 생성</h2>
                             <p>스터디 이름 및 정원(5명, 10명 등) 설정 폼 영역입니다.</p>
                             <button
-                                className="study-modal-close-btn"
+                                className={styles.study_modal_close_btn}
                                 onClick={() => setIsModalOpen(false)}
                             >
                                 닫기

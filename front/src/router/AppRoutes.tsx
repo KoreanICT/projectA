@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "../cont/Home";
+import VideoSummary from "../cont/video/VideoSummary";
 
 interface RouteItem {
     path: string;
@@ -11,6 +12,7 @@ interface RouteItem {
 const AppRoutes: React.FC = () => {
     const routeList = [
         { path: '/', element: <Home /> },
+        { path: '/videoSummary', element: <VideoSummary /> },
     ]
     return (
         <Routes>

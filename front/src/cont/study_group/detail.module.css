@@ -1,22 +1,28 @@
-/* 상단 내비게이션 (뒤로가기 버튼) */
+/* 상단 내비게이션 (돌아가기 버튼 영역) */
 .top_navigation {
     margin-top: 24px;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
 }
 
-.back_button {
-    font-size: 14px;
+/* 입장하기 버튼과 동일한 규격 및 스타일 */
+.action_btn {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 13px;
     font-weight: 600;
-    color: var(--text-secondary);
-    padding: 8px 12px;
     border-radius: var(--radius-sm);
-    transition: all 0.2s;
-    background-color: transparent;
+    transition: background-color 0.2s;
+    text-align: center;
+    line-height: normal;
 }
 
-.back_button:hover {
-    color: var(--primary);
-    background-color: var(--background-secondary);
+.action_btn.primary {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+.action_btn.primary:hover {
+    background-color: var(--primary-hover);
 }
 
 /* 전체 페이지 레이아웃 */
@@ -30,6 +36,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 20px; /* 상단 헤더 카드와 하단 탭 콘텐츠 간 간격 */
 }
 
 .detail_content_wrapper {
@@ -38,7 +45,7 @@
     gap: 20px;
 }
 
-/* 우측 사이드바 컨테이너 (Group_Sidebar 스타일 유지) */
+/* 우측 사이드바 컨테이너 */
 .detail_sidebar_container {
     width: 240px;
     position: sticky;
@@ -85,7 +92,7 @@
     margin: 6px 0;
 }
 
-/* 상단 스터디 프로필 헤더 카드 */
+/* 상단 고정 스터디 프로필 헤더 카드 */
 .group_header_card {
     display: flex;
     align-items: center;
@@ -168,7 +175,7 @@
     color: var(--text-secondary);
 }
 
-/* 업로드 창 임시 플레이스홀더 */
+/* 업로드 창 플레이스홀더 */
 .upload_placeholder {
     border: 2px dashed var(--border);
     border-radius: var(--radius-md);

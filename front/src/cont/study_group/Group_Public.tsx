@@ -80,8 +80,9 @@ export const Group_Public: React.FC<GroupPublicProps> = ({ searchType, searchTer
                                             인원: {study.currentMembers} / {study.maxCapacity}명
                                         </span>
                                         <button
-                                            className={`${styles.study_action_btn} ${isFull ? `${styles.disabled}` : `${styles.secondary}`}`}
+                                            className={`${styles.study_action_btn} ${isFull ? `${styles.disabled}` : `${styles.primary}`}`}
                                             disabled={isFull}
+                                            onClick={()=>{alert("참여 신청 완료.")}}
                                         >
                                             {isFull ? '정원 초과' : '참여하기'}
                                         </button>

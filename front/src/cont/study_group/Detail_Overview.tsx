@@ -4,22 +4,13 @@ import styles from './detail.module.css';
 export const Detail_Overview: React.FC = () => {
     return (
         <div className={styles.detail_content_wrapper}>
-            {/* 그룹 상단 헤더 프로필 영역 */}
-            <div className={styles.group_header_card}>
-                <div className={styles.group_icon}>물</div>
-                <div className={styles.group_header_info}>
-                    <h1 className={styles.group_title}>프론트엔드 CSS 지식 면접 대비반</h1>
-                    <p className={styles.group_desc}>면접 대비 CSS 공부</p>
-                </div>
-            </div>
-
-            {/* 그룹 공부시간 요약 영역 */}
+            {/* 공부 현황 요약 영역 */}
             <div className={styles.detail_section_card}>
-                <h3 className={styles.section_title}>그룹 공부시간</h3>
+                <h3 className={styles.section_title}>공부 현황</h3>
                 <div className={styles.empty_state}>
                     <span className={styles.clock_icon}>⏰</span>
-                    <p>아직 공부 기록이 없습니다.</p>
-                    <p className={styles.sub_text}>그룹 스터디룸에서 공부를 시작해보세요!</p>
+                    <p>오늘은 공부 기록이 없네요..</p>
+                    <p className={styles.sub_text}>오늘도 열공! 아자아자!</p>
                 </div>
             </div>
 

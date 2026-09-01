@@ -66,6 +66,11 @@ const Navbar: React.FC = () => {
                                 테스트4
                             </NavLink>
                         </li>
+                        <li>
+                            <NavLink to="/friend/add" className={linkClass}>
+                                친구
+                            </NavLink>
+                        </li>
                     </ul>
 
                     {/* User */}

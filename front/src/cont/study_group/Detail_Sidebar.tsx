@@ -40,10 +40,10 @@ export const Detail_Sidebar: React.FC<DetailSidebarProps> = ({ currentTab, onTab
                 <div className={styles.detail_menu_divider} />
 
                 <button
-                    className={`${styles.detail_menu_button} ${currentTab === 'memo' ? styles.active : ''}`}
-                    onClick={() => onTabChange('memo')}
+                    className={`${styles.detail_menu_button} ${currentTab === 'project' ? styles.active : ''}`}
+                    onClick={() => onTabChange('project')}
                 >
-                    메모
+                    시험 합격 프로젝트
                 </button>
 
                 <div className={styles.detail_menu_divider} />
@@ -58,10 +58,10 @@ export const Detail_Sidebar: React.FC<DetailSidebarProps> = ({ currentTab, onTab
                 <div className={styles.detail_menu_divider} />
 
                 <button
-                    className={`${styles.detail_menu_button} ${currentTab === 'project' ? styles.active : ''}`}
-                    onClick={() => onTabChange('project')}
+                    className={`${styles.detail_menu_button} ${currentTab === 'memo' ? styles.active : ''}`}
+                    onClick={() => onTabChange('memo')}
                 >
-                    시험 합격 프로젝트
+                    메모
                 </button>
             </nav>
         </aside>

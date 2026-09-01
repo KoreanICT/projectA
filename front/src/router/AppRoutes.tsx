@@ -2,6 +2,9 @@ import React from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 
 import Home from "../cont/Home";
+import {Group_Home} from "../cont/study_group/Group_Home";
+import Group_Create from "../cont/study_group/Group_Create";
+import { Group_Detail } from "../cont/study_group/Group_Detail";
 import AdminHome from "../cont/admin/AdminHome";
 
 import Layout from "../layout/Layout";
@@ -20,6 +23,15 @@ interface RouteItem {
 }
 
 const AppRoutes: React.FC = () => {
+    const routeList = [
+        { path: '/', element: <Home /> },
+
+
+        { path: '/createGroup', element: <Group_Create /> },
+        { path: '/homeGroup', element: <Group_Home/> },
+        { path: '/group/detail', element: <Group_Detail/> },
+
+    ]
     const { pathname } = useLocation();
 
     const isManage = pathname.startsWith("/admin");

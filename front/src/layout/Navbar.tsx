@@ -35,16 +35,16 @@ const Navbar: React.FC = () => {
                         </li>
 
                         <li>
-                            <NavLink to="/groupStudy" className={linkClass}>
-                                단체 스터디
+                            <NavLink to="/homeGroup" className={linkClass}>
+                                스터디룸
                             </NavLink>
                         </li>
 
-                        <li>
+                        {/* <li>
                             <NavLink to="/selfStudy" className={linkClass}>
-                                개인 스터디
+                                혼공룸
                             </NavLink>
-                        </li>
+                        </li> */}
 
                         <li>
                             <NavLink to="/test1" className={linkClass}>
